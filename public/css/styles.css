@@ -1,0 +1,149 @@
+html{
+    height:100%;
+    box-sizing:border-box;
+
+}
+
+body{
+    position:relative;
+    margin:0;
+    min-height: 100%;
+    padding-bottom: 6rem;
+    box-sizing: inherit;
+    font-family: 'Oswald', sans-serif;
+
+}
+.me-auto{
+    margin-right: 0!important;
+    margin-left: auto;
+}
+
+.cardImage{
+    height: 200px;
+    width: 200px;
+    margin: 1rem auto;
+    display: block;
+
+}
+
+section{
+    height:400px;
+    margin-bottom:75px
+}
+
+.grid-one {
+    grid-area: one;
+}
+
+.bg-image{
+    background-image: url('https://media.istockphoto.com/id/1188158107/vector/online-shopping-internet-market-mobile-app-shopping-and-people-buy-gifts-smartphone-payment.jpg?s=2048x2048&w=is&k=20&c=GCCLGMPRNo09aO6Zs5qu8Q-_7in86K6bb9chv6g0yx4=');
+    height: 400px
+}
+
+.mask{
+    background-color: rgba(0, 0, 0, 0.6);
+}
+ .prodImageDiv{
+    text-align:center;
+ }
+
+ .prodImage{
+    /* height: 100%; */
+    width: 50%;
+ }
+
+ .singleProductImgDiv{
+    text-align: center;
+ }
+ .singleProductImg{
+    height: 400px;
+    width:50%
+    
+ }
+
+ .productPageContainer{
+    margin-top: 50px;
+ }
+
+
+ .footer{
+    position: absolute;
+    right:0;
+    left:0;
+    bottom:0;
+    background-color: #69302e;
+    margin-bottom: 0px;
+ }
+
+ #brand{
+    font-size: 2rem;
+    font-family: "Audiowide", sans-serif;
+ }
+
+ #labels{
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+ }
+
+ .catSelector{
+    padding-bottom: 40px
+ }
+
+ #categories{
+    width:30%;
+    padding-bottom:0px;
+    display: inline-block;
+ }
+
+ .card{
+    border-radius: 25px;
+ }
+
+ .card-body{
+    background-color: #2e4969;
+    color:white
+ }
+
+ .card-title{
+    color: white;
+ }
+
+ .link{
+    text-decoration: none;
+
+ }
+ 
+ .rating-text{
+    color: white!important
+ }
+
+ .btn{
+    background-color: #2e6930;
+
+ }
+ .button:active{
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+ }
+
+ .smPhotoRow{
+    /* margin-top: 20px;
+    margin-bottom: 40px */
+ }
+.smProdImg{
+    height: 100px;
+    width: 75px;
+    
+}
+ 
+.productPageContainer{
+    margin-bottom: 100px
+}
+.item {
+   height: 60vh;
+   max-width: 100%;
+   display: flex;
+
+   align-items: center;
+   justify-content: center;
+ }
