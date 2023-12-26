@@ -8,6 +8,7 @@ import {
   NavDropdown,
   Modal,
   Button,
+  NavLink,
 } from "react-bootstrap";
 import { useAuth } from "./context/auth";
 import { useNavigate } from "react-router-dom";
@@ -33,15 +34,18 @@ function Navigation(props) {
                 <Button onClick={()=>{
               localStorage.removeItem('auth');
               window.location.reload();
-              window.location.href="http://localhost:3000/"//redirecting to login page
+              // window.location.href="http://localhost:3000/"//redirecting to login page
+              navigate('/')
             }}>
                 Logout
                
                 
-              </Button></>):(<></>)}
+              </Button></>):(<>
+
+              </>)}
             
 
-              <Nav.Link href="/home/about">About</Nav.Link>
+              <Nav.Link to="/home/about">About</Nav.Link>
               <Nav.Link href="/contact">Contact Us</Nav.Link>
 
 {auth?(<>

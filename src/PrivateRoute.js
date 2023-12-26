@@ -22,8 +22,12 @@ l=false;
     {/* <h1>Please Login in</h1> */}
 
 
-  {              window.location.href="http://localhost:3000/"//redirecting to login page
-}
+  {/* {              window.location.href="http://localhost:3000/"//redirecting to login page
+} */}
+                {/* {navigate('/')} */}
+                <Login/>
+                
+
     </>
 
 };
