@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Outlet, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useAuth } from "./components/context/auth";
-// import { useAuth } from "../../context/auth";
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
+
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -12,12 +10,15 @@ const Login = () => {
 
   const navigate = useNavigate();
 
-if(auth?.token){
-  //if already logged in then redirect to home page
-  navigate('/home');
+const authfromlocalstorage=localStorage.getItem('auth');
+useEffect(()=>{
+  if(authfromlocalstorage){
+    // console.log(authfromlocalstorage.token)
+    //if already logged in then redirect to home page
+    navigate('/home');
+  }
 
-}
-
+},[])
 
   // form function
   const handleSubmit = async (e) => {
@@ -33,7 +34,7 @@ if(auth?.token){
   
         setAuth({
           ...auth,
-          user: res.data.user,
+          // user: res.data.user,
           token: res.data.token,
         });
   

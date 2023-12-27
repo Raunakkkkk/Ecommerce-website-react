@@ -1,4 +1,5 @@
 import React from "react";
+import  axios  from 'axios';
 
 function CartBasket(props) {
   const { cartItems, onAdd, onRemove, onDelete } = props;
@@ -9,24 +10,18 @@ function CartBasket(props) {
 
   const checkout = async () => {
     console.log(cartItems);
-    await fetch("http://localhost:4000/checkout", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ items: cartItems }),
-    })
-      .then((response) => {
-        console.log(response);
-        return response.json();
-      })
-      .then((response) => {
-        if (response.url) {
-          window.location.assign(response.url);
-        }
+    try {
+      const response = await axios.post("http://localhost:4000/checkout", {
+        items: cartItems,
       });
-  };
 
+      if (response.data.url) {
+        window.location.assign(response.data.url);
+      }
+    } catch (error) {
+      console.error("Checkout failed:", error);
+    }
+  };
   return (
     <div>
       <div>{cartItems.length === 0 && <div>Cart is Empty</div>}</div>
@@ -46,7 +41,7 @@ function CartBasket(props) {
           </div>
           <div className="col-3 text-right">
             <span>
-              {item.qty} x Rs{item.price.toFixed(2)}
+              {item.qty} x ${item.price.toFixed(2)}
             </span>
           </div>
         </div>
@@ -56,15 +51,15 @@ function CartBasket(props) {
           <hr></hr>
           <div className="row">
             <div className="col-2">Items Price</div>
-            <div className="col-1 text-right">Rs{itemsPrice.toFixed(2)}</div>
+            <div className="col-1 text-right">${itemsPrice.toFixed(2)}</div>
           </div>
           <div className="row">
             <div className="col-2">Tax Price</div>
-            <div className="col-1 text-right">Rs{taxPrice.toFixed(2)}</div>
+            <div className="col-1 text-right">${taxPrice.toFixed(2)}</div>
           </div>
           <div className="row">
             <div className="col-2">Shipping Price</div>
-            <div className="col-1 text-right">Rs{shippingPrice.toFixed(2)}</div>
+            <div className="col-1 text-right">${shippingPrice.toFixed(2)}</div>
           </div>
 
           <div className="row">
@@ -72,7 +67,7 @@ function CartBasket(props) {
               <strong>Total Price</strong>
             </div>
             <div className="col-1 text-right">
-              <strong>Rs{totalPrice.toFixed(2)}</strong>
+              <strong>${totalPrice.toFixed(2)}</strong>
             </div>
           </div>
           <hr />

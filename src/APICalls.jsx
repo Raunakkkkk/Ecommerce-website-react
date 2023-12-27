@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import axios from "axios";
 
 export const getAllProducts = async () => {
@@ -41,3 +40,17 @@ export const getProductById = async (id) => {
     throw new Error(e.message);
   }
 };
+
+
+export const searchProduct=async(searchQuery)=>{
+  let response;
+  try {
+    
+     response= await axios.get(`https://dummyjson.com/products/search?q=${searchQuery}`);
+    console.log(searchQuery);
+    return response;
+  } catch (e) {
+    // catch error
+    throw new Error(e.message);
+  }
+}

@@ -126,10 +126,7 @@ section{
   transform: translateY(4px);
  }
 
- .smPhotoRow{
-    /* margin-top: 20px;
-    margin-bottom: 40px */
- }
+
 .smProdImg{
     height: 100px;
     width: 75px;
@@ -147,3 +144,5 @@ section{
    align-items: center;
    justify-content: center;
  }
+
+ 

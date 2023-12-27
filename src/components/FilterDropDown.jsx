@@ -1,6 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { useState } from "react";
 
 function DropDown(props) {
   const [selected, setSelected] = useState("All");
